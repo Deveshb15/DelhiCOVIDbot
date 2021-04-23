@@ -1,9 +1,16 @@
 import tweepy
 import time
+import os
+from os import environ
 
-auth = tweepy.OAuthHandler('onQcdIYs1Rm59GlHJZoPhAj1F', 'p3mX4SuEbzIeQlGaKSxHIJQ7joack9BWS8kewolcAMRJ7zZ3dE')
+CONSUMER_KEY = environ['CONSUMER_KEY']
+CONSUMER_SECRET = environ['CONSUMER_SECRET']
+ACCESS_KEY = environ['ACCESS_KEY']
+ACCESS_SECRET = environ['ACCESS_SECRET']
 
-auth.set_access_token('1385468960473157632-MziDMJYqL9cBNOYpl8OIB0gRuAOQ9B', 'zjyGa8oorQSfXTmkmPW6mPo7OZVf3cufLGpScKBqgeubv')
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+
+auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 
 
 api = tweepy.API(auth, wait_on_rate_limit=True)
