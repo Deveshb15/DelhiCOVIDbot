@@ -6,7 +6,7 @@ auth = tweepy.OAuthHandler('onQcdIYs1Rm59GlHJZoPhAj1F', 'p3mX4SuEbzIeQlGaKSxHIJQ
 auth.set_access_token('1385468960473157632-MziDMJYqL9cBNOYpl8OIB0gRuAOQ9B', 'zjyGa8oorQSfXTmkmPW6mPo7OZVf3cufLGpScKBqgeubv')
 
 
-api = tweepy.API(auth)
+api = tweepy.API(auth, wait_on_rate_limit=True)
 
 def check_mentions(api):
   for tweet in tweepy.Cursor(api.mentions_timeline).items():
